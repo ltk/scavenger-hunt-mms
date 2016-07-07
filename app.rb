@@ -261,8 +261,7 @@ def sendNextClue(user)
   remaining = user.remaining
   remaining = remaining.split(',')
 
-  l = remaining.length
-  next_clue = remaining[rand(l)]
+  next_clue = remaining[0]
 
   clue = $CLUES[next_clue]
 
