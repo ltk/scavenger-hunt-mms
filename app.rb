@@ -229,7 +229,9 @@ get '/scavenger/?' do
         sendNextClue(@player)
       end
     end
-  rescue
+  rescue StandardError => e
+    puts e.inspect
+
     output = "Oh noes! Something bad happened and my computer brain is terribly confused. I just texted Lawson asking him to fix me. He'll try to get this sorted out."
 
     # Send a text to the game runner to check-in on the app. Something broke
@@ -237,7 +239,7 @@ get '/scavenger/?' do
     message = @client.account.messages.create(
       :from => ENV['RONIN_NUMBER'],
       :to => ENV['PERSONAL_PHONE'],
-      :body => "Something went wrong with the scavenger hunt app. Check the logs and figure out what happened. The user who hit the error was #{@player.name} at #{@player.phone_number}."
+      :body => "Something went wrong with WSJK. Check the logs and figure out what happened. The phone that hit the error was #{@player.phone_number}."
     )
   end
 
