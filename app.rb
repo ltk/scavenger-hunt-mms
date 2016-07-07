@@ -197,14 +197,15 @@ get '/scavenger/?' do
       # Turn the remaining object into a proper array, to remove
       # the correct clue from it later.
       remaining = (@player.remaining).split(',')
+      puts "remaining #{remaining}"
 
       if @body == clue['keyword']
 
         # Score this point
-        complete = @player.complete++
+        # complete = @player.complete++
 
         # Remove the clue that was just completed
-        remaining.delete(current)
+        # remaining.delete(current)
 
         # UPDATE THE USER
         @player.update(:complete => complete, :remaining => remaining.join(','))
