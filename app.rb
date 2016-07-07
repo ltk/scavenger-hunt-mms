@@ -220,14 +220,14 @@ get '/scavenger/?' do
 
       else
         # Player missed one, increment
-        puts @player.missed
-        missed = @player.missed++
-        @player.update(:missed => missed)
+        # puts @player.missed
+        # missed = @player.missed++
+        # @player.update(:missed => missed)
 
-        output = "That's not completely right (in fact it's wrong). Here's another clue, see if you can find it."
+        output = "That's not completely right (in fact it's wrong). Try again. Or I guess you could ask for a hint."
 
         # Get next clue and send it.
-        sendNextClue(@player)
+        # sendNextClue(@player)
       end
     end
   rescue StandardError => e
