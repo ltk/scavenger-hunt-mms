@@ -220,6 +220,7 @@ get '/scavenger/?' do
 
       else
         # Player missed one, increment
+        puts @player.missed
         missed = @player.missed++
         @player.update(:missed => missed)
 
@@ -230,6 +231,7 @@ get '/scavenger/?' do
       end
     end
   rescue StandardError => e
+    puts @player
     puts e.inspect
     puts e.backtrace
 
