@@ -151,7 +151,7 @@ get '/scavenger/?' do
         @player.update(:status => 'reconfirming')
       else
         puts "Sending #{@player.name} a clue."
-        output = "Ok #{@player.name}, time to go find your first clue! You should receive a picture of it shortly. Once you find the object send back the word clue to this number."
+        output = "Ok #{@player.name}, time to go find your first clue! I'll send you picture of it shortly. Once you solve the clue and find the thing, find the code word on or around it and text it to me."
         @player.update(:status => 'hunting')
         sendNextClue(@player)
       end
@@ -230,7 +230,7 @@ get '/scavenger/?' do
       end
     end
   rescue
-    output = "Hold on, something happened. We'll try to fix this right away."
+    output = "Oh noes! Something bad happened and my computer brain is terribly confused. I just texted Lawson asking him to fix me. He'll try to get this sorted out."
 
     # Send a text to the game runner to check-in on the app. Something broke
     # this main function.
