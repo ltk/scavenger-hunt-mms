@@ -121,7 +121,7 @@ $CLUES = {
 get '/scavenger/?' do
   # Decide what do based on status and body
   @phone_number = Sanitize.clean(params[:From])
-  @body = params[:Body].downcase
+  @body = params[:Body].downcase.strip
 
   # Find the player associated with this number if there is one
   @player = Player.first(:phone_number => @phone_number)
@@ -140,26 +140,52 @@ get '/scavenger/?' do
 
     # Setup the player details
     when :new
-      output = "Welcome to the Twilio MMS scavenger hunt. First what is your super awesome nickname?"
-      @player.update(:status => 'naming')
+      output = "Hey Wendy! HAPPY BIRTHDAY! I heard you like scavenger hunts. Is that true?"
+      @player.update(:status => 'confirming')
+
+    when :confirming
+      denied = ["no", "na", "nope", "no way", "nah"].include?(@body)
+
+      if !denied
+        output = "Ummm... really? You sure, cuz everyone seems to think you do. Don't you like scavenger hunts?"
+        @player.update(:status => 'reconfirming')
+      else
+        puts "Sending #{@player.name} a clue."
+        output = "Ok #{@player.name}, time to go find your first clue! You should receive a picture of it shortly. Once you find the object send back the word clue to this number."
+        @player.update(:status => 'hunting')
+        sendNextClue(@player)
+      end
+
+    when :reconfirming
+      denied = ["no", "na", "nope", "no way", "nah"].include?(@body)
+
+      if !denied
+        output = "Well this is embarassing. Are you willing to do a scavenger hunt anyway?"
+        @player.update(:status => 'reconfirming')
+      else
+        puts "Sending #{@player.name} a clue."
+        output = "Ok #{@player.name}, time to go find your first clue! You should receive a picture of it shortly. Once you find the object send back the word clue to this number."
+        @player.update(:status => 'hunting')
+        sendNextClue(@player)
+      end
 
     # Get Player NickName
-    when :naming
-      if @player.name.nil?
-        @player.name = @body
-        @player.save
-        output = "We have your nickname as #{@body}. Is this correct? [yes] or [no]?"
-      else
-        if @body == 'yes'
-          puts "Sending #{@player.name} a clue."
-          output = "Ok #{@player.name}, time to go find your first clue! You should receive a picture of it shortly. Once you find the object send back the word clue to this number."
-          @player.update(:status => 'hunting')
-          sendNextClue(@player)
-        else
-          output = "Okay safari dude. What is your nickname then?"
-          @player.update(:name => nil)
-        end
-      end
+    # when :naming
+    #   if @player.name.nil?
+    #     @player.name = @body
+    #     @player.save
+    #     output = "We have your nickname as #{@body}. Is this correct? [yes] or [no]?"
+    #   else
+    #     if @body == 'yes'
+    #       puts "Sending #{@player.name} a clue."
+    #       output = "Ok #{@player.name}, time to go find your first clue! You should receive a picture of it shortly. Once you find the object send back the word clue to this number."
+    #       @player.update(:status => 'hunting')
+    #       sendNextClue(@player)
+    #     else
+    #       output = "Okay safari dude. What is your nickname then?"
+    #       @player.update(:name => nil)
+    #     end
+    #   end
 
     # When the user is hunting
     when :hunting
@@ -187,7 +213,7 @@ get '/scavenger/?' do
           output = "Congratulations #{@player.name}! You've finished the game and found #{@player.complete} clues! Your fastest time was #{@minutes}, which is pretty good! Now just wait for the others to finish and a special rewards ceremony."
         else
           output = "Well done #{@player.name}! You've just found a treasure! Now here's the next clue!"
-          
+
           # Get next clue and send it.
           sendNextClue(@player)
         end
@@ -245,7 +271,7 @@ def sendPicture(to, msg, media)
     :to => @phone_number,
     :body => msg,
     :media_url => media,
-  ) 
+  )
   puts message.to
 end
 
@@ -254,6 +280,7 @@ def createUser(phone_number)
   user = Player.create(
     :phone_number => phone_number,
     :remaining => clues,
+    :name => "Wendy"
   )
   user.save
   return user
