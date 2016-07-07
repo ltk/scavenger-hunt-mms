@@ -208,12 +208,12 @@ get '/scavenger/?' do
         # remaining.delete(current)
 
         # UPDATE THE USER
-        @player.update(:complete => complete, :remaining => remaining.join(','))
+        @player.update(:remaining => remaining.join(','))
 
         if remaining.length == 0
-          output = "Congratulations #{@player.name}! You've finished the game and found #{@player.complete} clues! Your fastest time was #{@minutes}, which is pretty good! Now just wait for the others to finish and a special rewards ceremony."
+          output = "Congratulations #{@player.name}! You've finished the hunt and found #{@player.complete} clues! You finished in #{@minutes}! Ur cool."
         else
-          output = "Well done #{@player.name}! You've just found a treasure! Now here's the next clue!"
+          output = "Well done #{@player.name}! You've just found a treasure! Now, onto the next clue!"
 
           # Get next clue and send it.
           sendNextClue(@player)
