@@ -16,7 +16,7 @@ class Player
   property :phone_number, String, :length => 30, :required => true
   property :name, String
   property :current, String
-  property :status, Enum[ :new, :naming, :hunting], :default => :new
+  property :status, Enum[ :new, :naming, :hunting, :confirming, :reconfirming], :default => :new
   property :missed, Integer, :default => 0
   property :complete, Integer, :default => 0
   property :remaining, Object
@@ -280,7 +280,7 @@ def createUser(phone_number)
   user = Player.create(
     :phone_number => phone_number,
     :remaining => clues,
-    :name => "Wendy"
+    :name => "Wendy",
   )
   user.save
   return user
