@@ -205,7 +205,7 @@ get '/scavenger/?' do
         # complete = @player.complete++
 
         # Remove the clue that was just completed
-        # remaining.delete(current)
+        remaining.delete(current)
 
         # UPDATE THE USER
         @player.update(:remaining => remaining.join(','))
