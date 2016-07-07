@@ -213,7 +213,15 @@ get '/scavenger/?' do
         if remaining.length == 0
           output = "Congratulations #{@player.name}! You've finished the hunt and found #{@player.complete} clues! You finished in #{@minutes}! Ur cool."
         else
-          output = "Well done #{@player.name}! You've just found a treasure! Now, onto the next clue!"
+          success_messages = [
+            "Nailed it.",
+            "Dayum you're smart #{@player.name}.",
+            "Yup, right on.",
+            "Well done #{@player.name}!",
+            "Niiiiiice!",
+          ]
+
+          output = "#{success_messages.sample} Now, onto the next clue!"
 
           # Get next clue and send it.
           sendNextClue(@player)
