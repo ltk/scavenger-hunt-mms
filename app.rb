@@ -231,6 +231,7 @@ get '/scavenger/?' do
     end
   rescue StandardError => e
     puts e.inspect
+    puts e.backtrace
 
     output = "Oh noes! Something bad happened and my computer brain is terribly confused. I just texted Lawson asking him to fix me. He'll try to get this sorted out."
 
