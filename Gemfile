@@ -8,3 +8,5 @@ gem "data_mapper"
 gem "shotgun"
 gem 'pg'
 gem "dm-postgres-adapter"
+gem 'exifr', :git => 'git://github.com/picuous/exifr.git'
+gem 'geo-distance'

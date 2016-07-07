@@ -40,6 +40,14 @@ end
 
 set :static, true
 
+# CLUES
+
+# bike (bring your lock!)
+# under the sun
+# ncar
+
+
+
 $CLUES = {
   "clue1" => {
     "keyword" => 'boygeorge',
@@ -119,6 +127,8 @@ $CLUES = {
 }
 
 get '/scavenger/?' do
+  puts "new message"
+  puts params
   # Decide what do based on status and body
   @phone_number = Sanitize.clean(params[:From])
   @body = params[:Body].downcase
