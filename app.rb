@@ -121,7 +121,7 @@ $CLUES = {
 get '/scavenger/?' do
   # Decide what do based on status and body
   @phone_number = Sanitize.clean(params[:From])
-  @body = params[:Body].downcase.strip
+  @body = params[:Body].downcase
 
   # Find the player associated with this number if there is one
   @player = Player.first(:phone_number => @phone_number)
@@ -151,7 +151,7 @@ get '/scavenger/?' do
         @player.update(:status => 'reconfirming')
       else
         puts "Sending #{@player.name} a clue."
-        output = "Ok #{@player.name}, time to go find your first clue! I'll send you picture of it shortly. Once you solve the clue and find the thing, find the code word on or around it and text it to me."
+        output = "Cool! Well then it's time to go find your first clue! I'll send you picture of it shortly. Once you solve the clue and find the thing, find the code word on or around it and text it to me."
         @player.update(:status => 'hunting')
         sendNextClue(@player)
       end
@@ -164,7 +164,7 @@ get '/scavenger/?' do
         @player.update(:status => 'reconfirming')
       else
         puts "Sending #{@player.name} a clue."
-        output = "Ok #{@player.name}, time to go find your first clue! You should receive a picture of it shortly. Once you find the object send back the word clue to this number."
+        output = "Cool! Well then it's time to go find your first clue! You should receive a picture of it shortly. Once you find the object send back the word clue to this number."
         @player.update(:status => 'hunting')
         sendNextClue(@player)
       end
