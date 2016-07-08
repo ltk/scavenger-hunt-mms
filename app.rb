@@ -42,11 +42,30 @@ set :static, true
 
 # CLUES
 
+# free-for-all answer (server's name, price of a cookie + tax (before tip))
+
+# kaia goose chase
 # bike (bring your lock!)
-# under the sun
-# ncar
+# south boulder animal hospital (name of a front desk person) [louise|shellee|janice]
+# under the sun (cost of a cookie)
+# king soopers (the basil olive oil code)
+# house where I left my sunglasses
+# ncar (TKTKTK something from trailhead sign... maybe how many stations there are in the nature walk thing?)
+# magic mesa
+# teahouse (how many kinds of tea do they have)
+# rio grande (You got the bad kind. )
+# amu
+# luciles (all digits on their front door) [7282]
+# mountain sun (drink and FY, then text me your server's name)
+# whole foods (mochi fridge)
+# solana
+# sanitas brewery
+# motomaki
+# jimmy johns (how many tables are there?)
+# ethiopian place
+# champions center
 
-
+# Flagstaff (enter the number of pedal strokes it takes you to get here... jk)
 
 $CLUES = {
   "clue1" => {
