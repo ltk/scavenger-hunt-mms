@@ -99,6 +99,43 @@ set :static, true
 
 # Flagstaff (enter the number of pedal strokes it takes you to get here... jk)
 
+
+
+# Home
+
+# 1 Sledding in Tantra Park
+# 2 South Boulder Animal hospital
+# 3 RTD Park and Ride
+# __ transfer  __
+# 4 Old Viget Office
+# 5 Dushanbe Teahouse
+# 6 Boulder Tubing Park
+# 7 Settlers Park (Red Rocks)
+# 8 Lolita's Market
+# 9 Centro
+# 10 Amu
+# 11 Luciles
+# 12 Mountain Sun (Lunch + Beer)
+# 13 Laughing Goat
+# 14 Whole Foods
+# 15 Solana
+# 16 Crossfit Sanitas
+# 17 Champions Center
+# 18 CU Law
+# 19 Ras Kassas
+# 20 Creekside Elementary
+# 21 Neptune
+# 22 Under the Sun
+
+# Home
+
+
+# Spruce pool?
+# mr horse
+# birdies
+
+
+
 $CLUES = {
   "clue1" => {
     "keyword" => 'ball',
@@ -120,7 +157,7 @@ a much bigger thing
     "keyword" => 'mermaid',
     "title" => %q(
 seeing will make you
-think twice about surf and turn
+think twice about surf and turf
 Lawson wouldn't know
     )
   },
@@ -151,27 +188,33 @@ then move in a spiral
   "clue7" => {
     "keyword" => 'yes',
     "title" => %q(
-Candle-gripping stars
+Candle-gripping star
 spares are deposited here.
-well, will you or what?
+well, what do you say?
     )
   },
   "clue8" => {
-    "keyword" => 'TKTKTKTK',
+    "keyword" => 'giant',
     "title" => %q(
-
+expensive new toy
+picturesque sunset vistas
+downhill is scary
     )
   },
   "clue9" => {
-    "keyword" => 'TKTKTK',
+    "keyword" => 'vasque',
     "title" => %q(
-
+my dirt is a sign
+of the beatings I've taken
+to bring you nature
     )
   },
   "clue10" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => 'goose',
     "title" => %q(
-
+you may find a star
+in the scene of an actual,
+real life wild goose chase
     )
   },
   "clue11" => {
@@ -186,19 +229,199 @@ well, will you or what?
 
     )
   },
+  # 1 Sledding in Tantra Park
   "clue13" => {
     "keyword" => 'TKTKTKTK',
     "title" => %q(
-
+Plastic in garage
+Put to its intended use
+Watch out for that hay!
     )
   },
+  # 2 South Boulder Animal hospital
   "clue14" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+sick pumpkin muffin
+was feeling a lot better
+after a visit
+    )
+  },
+  # 3 RTD Park and Ride
+  "clue15" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+despite what it says
+tou don't have to park to ride
+to airport or work
+    )
+  },
+  # 4 Old Viget Office
+  "clue16" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+back alley dealings
+aka another day
+at old Viget west
+    )
+  },
+  # 5 Dushanbe Teahouse
+  "clue17" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+It sucks that all we
+gave in return was a lame
+internet cafe
+    )
+  },
+  # 6 Boulder Tubing Park
+  "clue18" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+started our float here
+if you can call it a float
+more like survival
+    )
+  },
+  # 7 Settlers Park (Red Rocks)
+  # Rock climbing in work attire.
+  "clue19" => {
     "keyword" => 'TKTKTKT',
     "title" => %q(
 
     )
   },
-  "clue15" => {
+  # 8 Lolita's Market
+  # 24 hour market, snozwitches
+  "clue20" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
+  },
+  # 9 Centro
+  # puts the "fun" in fundido
+  # mojitos
+  "clue21" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
+  },
+  # 10 Amu
+  "clue22" => {
+    "keyword" => 'TKTKTKTKT',
+    "title" => %q(
+ahem, no shoes here
+find a different place to wear
+shoes on your birthdays
+    )
+  },
+  # 11 Luciles
+  "clue23" => {
+    "keyword" => 'TKTKTKTK',
+    "title" => %q(
+Goodness gracious me.
+I can't fit another bite.
+Too much carbs to start.
+    )
+  },
+  # 12 Mountain Sun (Lunch + Beer)
+  "clue24" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+Proceed to water hole
+after one or two FYs
+a star may appear
+    )
+  },
+  # 13 Laughing Goat
+  "clue25" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+hip cafe named for
+an epic badass of the
+mountain wilderness
+    )
+  },
+  # 14 Whole Foods
+  "clue26" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+where in the hell is
+the tandoori masala
+check every bottle
+    )
+  },
+  # 15 Solana
+  "clue27" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+Is there a word for
+the opposite of fung shui?
+That's what they went for.
+    )
+  },
+  # 16 Crossfit Sanitas
+  "clue28" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+do you ever get
+to push those huge tires around?
+think outside the box
+    )
+  },
+  # 17 Champions Center
+  # hit me with that sweet
+  # radi
+  # PT starts wednesday.
+  "clue29" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
+  },
+  # 18 CU Law
+  "clue30" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
+  },
+  # 19 Ras Kassas
+  "clue31" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+elastic or food?
+rang the bell, rang it again
+anybody home?
+    )
+  },
+  # 20 Creekside Elementary
+  "clue32" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+4803
+if we bought it, J-K kids
+would go to learn here
+    )
+  },
+  # 21 Neptune
+  "clue33" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
+  },
+  # 22 Under the Sun
+  "clue34" => {
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
+  },
+  # Next clue back at home
+  "clue35" => {
     "keyword" => 'TKTKTKT',
     "title" => %q(
 
