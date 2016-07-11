@@ -42,9 +42,30 @@ set :static, true
 
 # CLUES
 
+# IN
+# remote battery compartment
+# disney vhs
+# bear canister
+# bike
+
+
+# green goji
+# you don't need to go
+# to dushanbe to find the
+# my favorite green
+
+
+# ring recepticle
+
+# OUT
+
+
+# Lunch rez at Oak
+# find a gold star
+# enter some word in the scene
 # free-for-all answer (server's name, price of a cookie + tax (before tip))
 
-# kaia goose chase
+# kaia goose chase (you may find a start in the scene of the most recent wild goose chase)
 # bike (bring your lock!)
 # south boulder animal hospital (name of a front desk person) [louise|shellee|janice]
 # under the sun (cost of a cookie)
@@ -53,25 +74,38 @@ set :static, true
 # ncar (TKTKTK something from trailhead sign... maybe how many stations there are in the nature walk thing?)
 # magic mesa
 # teahouse (how many kinds of tea do they have)
+# T-aco ()
 # rio grande (You got the bad kind. )
 # amu
 # luciles (all digits on their front door) [7282]
 # mountain sun (drink and FY, then text me your server's name)
+# The laughing goat ()
 # whole foods (mochi fridge)
 # solana
 # sanitas brewery
 # motomaki
 # jimmy johns (how many tables are there?)
 # ethiopian place
+
+
+# Non-Shared Places
+# Oak
+# Arabesque
 # champions center
+# old office?
+
+
 
 # Flagstaff (enter the number of pedal strokes it takes you to get here... jk)
 
 $CLUES = {
   "clue1" => {
-    "keyword" => 'boygeorge',
-    "title" => 'Humdinger of a clue',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue01.jpg'
+    "keyword" => 'ball',
+    "title" => %q(
+    you don't need to go
+    to dushanbe to find the
+    my favorite green
+    )
   },
   "clue2" => {
     "keyword" => 'scumbucket',
@@ -302,7 +336,8 @@ def sendNextClue(user)
 
   clue = $CLUES[next_clue]
 
-  sendPicture(@phone_number, clue['title'], clue['url'])
+  # sendPicture(@phone_number, clue['title'], clue['url'])
+  sendPicture(@phone_number, clue['title'])
 
   @player.update(:current => next_clue)
 end
@@ -312,7 +347,7 @@ def sendPicture(to, msg, media)
     :from => ENV['RONIN_NUMBER'],
     :to => @phone_number,
     :body => msg,
-    :media_url => media,
+    # :media_url => media,
   )
   puts message.to
 end
