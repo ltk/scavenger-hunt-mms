@@ -363,7 +363,7 @@ get '/scavenger/?' do
 
   @client.account.messages.create({
     to:  @phone_number,
-    from: ENV['RONIN_NUMBER']
+    from: ENV['RONIN_NUMBER'],
     body: output
   })
 
