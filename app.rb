@@ -345,16 +345,19 @@ get '/scavenger/?' do
     )
   end
 
+  @send_this = nil
+
   if params['SmsSid'] == nil
-    return nil
+    return @send_this
   else
     response = Twilio::TwiML::Response.new do |r|
       r.Sms output
     end
-    response.text
+    @send_this = response.text
   end
 
   send_pending_texts
+  @send_this
 end
 
 def send_pending_texts
