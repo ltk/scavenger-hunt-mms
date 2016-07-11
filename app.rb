@@ -241,7 +241,7 @@ get '/scavenger/?' do
         @player.update(:status => 'reconfirming')
       else
         puts "Sending #{@player.name} a clue."
-        output = "Cool! Well then it's time to go find your first clue! I'll send you picture of it shortly. Once you solve the clue and find the thing, find the code word on or around it and text it to me."
+        output = "Cool! Well then it's time for your first clue! I'll send it in a sec. Find the thing, then text me the code word on or around it."
         @player.update(:status => 'hunting')
         sendNextClue(@player)
       end
@@ -254,7 +254,7 @@ get '/scavenger/?' do
         @player.update(:status => 'reconfirming')
       else
         puts "Sending #{@player.name} a clue."
-        output = "Cool! Well then it's time to go find your first clue! You should receive a picture of it shortly. Once you find the object send back the word clue to this number."
+        output = "Cool! Well then it's time for your first clue! I'll send it in a sec. Find the thing, then text me the code word on or around it."
         @player.update(:status => 'hunting')
         sendNextClue(@player)
       end
@@ -309,6 +309,12 @@ get '/scavenger/?' do
             "Yup, right on.",
             "Well done #{@player.name}!",
             "Niiiiiice!",
+            "Sweeeet!",
+            "Booyah.",
+            "You got it... is this too easy?",
+            "Perfect!",
+            "Correcto.",
+            "Uh huh!",
           ]
 
           output = "#{success_messages.sample} Now, onto the next clue!"
