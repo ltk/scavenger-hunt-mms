@@ -209,7 +209,7 @@ get '/scavenger/?' do
     when :confirming
       denied = ["no", "na", "nope", "no way", "nah"].include?(@body)
 
-      if !denied
+      if denied
         output = "Ummm... really? You sure, cuz everyone seems to think you do. Don't you like scavenger hunts?"
         @player.update(:status => 'reconfirming')
       else
@@ -222,7 +222,7 @@ get '/scavenger/?' do
     when :reconfirming
       denied = ["no", "na", "nope", "no way", "nah"].include?(@body)
 
-      if !denied
+      if denied
         output = "Well this is embarassing. Are you willing to do a scavenger hunt anyway?"
         @player.update(:status => 'reconfirming')
       else
@@ -342,7 +342,7 @@ def sendNextClue(user)
   @player.update(:current => next_clue)
 end
 
-def sendPicture(to, msg, media)
+def sendPicture(to, msg)
   message = @client.account.messages.create(
     :from => ENV['RONIN_NUMBER'],
     :to => @phone_number,
