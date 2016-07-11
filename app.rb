@@ -28,6 +28,7 @@ DataMapper.auto_upgrade!
 
 # Load up our necessary requirements before each function
 before do
+  @pending_texts = []
   @ronin_number = ENV['RONIN_NUMBER']
   @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
   if params[:error].nil?
@@ -102,80 +103,106 @@ $CLUES = {
   "clue1" => {
     "keyword" => 'ball',
     "title" => %q(
-    you don't need to go
-    to dushanbe to find the
-    my favorite green
+you don't need to go
+to dushanbe to find the
+my favorite green
     )
   },
   "clue2" => {
-    "keyword" => 'scumbucket',
-    "title" => 'Let this clue float in your head for a bit.',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue02.jpg'
+    "keyword" => 'duracell',
+    "title" => %q(
+we power the thing
+you use to give power to
+a much bigger thing
+    )
   },
   "clue3" => {
-    "keyword" => 'billieidol',
-    "title" => 'Wood you be my neighbor?',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue03.jpg'
+    "keyword" => 'mermaid',
+    "title" => %q(
+seeing will make you
+think twice about surf and turn
+Lawson wouldn't know
+    )
   },
   "clue4" => {
-    "keyword" => 'erasure',
-    "title" => 'Time to hunt!',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue04.jpg'
+    "keyword" => 'vault',
+    "title" => %q(
+The first words of this
+poem don't really matter.
+Jenny can't get in.
+    )
   },
   "clue5" => {
-    "keyword" => 'blondie',
-    "title" => 'Can you handle this?',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue05.jpg'
+    "keyword" => 'meep',
+    "title" => %q(
+mommy! mommy! meep!
+we want to go out and play!
+meep! meep! meep! mommy!
+    )
   },
   "clue6" => {
-    "keyword" => 'cinderella',
-    "title" => 'Your days are numbered...',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue06.jpg'
+    "keyword" => 'bca',
+    "title" => %q(
+omg find them
+but first you need to find me
+then move in a spiral
+    )
   },
   "clue7" => {
-    "keyword" => 'joejackson',
-    "title" => 'Your inability to find these clues is grating on me.',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue07.jpg'
+    "keyword" => 'yes',
+    "title" => %q(
+Candle-gripping stars
+spares are deposited here.
+well, will you or what?
+    )
   },
   "clue8" => {
-    "keyword" => 'onedirection',
-    "title" => 'Your progress is a bad sign.',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue08.jpg'
+    "keyword" => 'TKTKTKTK',
+    "title" => %q(
+
+    )
   },
   "clue9" => {
-    "keyword" => 'wildfire',
-    "title" => 'Wash away your fears',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue09.jpg'
+    "keyword" => 'TKTKTK',
+    "title" => %q(
+
+    )
   },
   "clue10" => {
-    "keyword" => 'slowmo',
-    "title" => 'Are you getting tired of this?',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue10.jpg'
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
   },
   "clue11" => {
-    "keyword" => 'dummy',
-    "title" => 'The wicked clue is dead?',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue11.jpg'
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
   },
   "clue12" => {
-    "keyword" => 'fakeplastic',
-    "title" => 'Rock on dude!',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue12.jpg'
+    "keyword" => 'TKTKTKTKT',
+    "title" => %q(
+
+    )
   },
   "clue13" => {
-    "keyword" => 'menatwork',
-    "title" => 'Keep looking!',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue13.jpg'
+    "keyword" => 'TKTKTKTK',
+    "title" => %q(
+
+    )
   },
   "clue14" => {
-    "keyword" => 'duran',
-    "title" => 'Dont lean on your senses.',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue14.jpg'
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
   },
   "clue15" => {
-    "keyword" => 'jazzyjeff',
-    "title" => 'Let cooler heads prevail.',
-    "url" => 'https://dl.dropboxusercontent.com/u/123971/scavenger-hunt/clue15.jpg'
+    "keyword" => 'TKTKTKT',
+    "title" => %q(
+
+    )
   },
 }
 
@@ -207,7 +234,7 @@ get '/scavenger/?' do
       @player.update(:status => 'confirming')
 
     when :confirming
-      denied = ["no", "na", "nope", "no way", "nah"].include?(@body)
+      denied = ["no", "na", "nope", "no way", "nah", "dont", "don't", "not"].include?(@body)
 
       if denied
         output = "Ummm... really? You sure, cuz everyone seems to think you do. Don't you like scavenger hunts?"
@@ -220,7 +247,7 @@ get '/scavenger/?' do
       end
 
     when :reconfirming
-      denied = ["no", "na", "nope", "no way", "nah"].include?(@body)
+      denied = ["no", "na", "nope", "no way", "nah", "dont", "don't", "not"].include?(@body)
 
       if denied
         output = "Well this is embarassing. Are you willing to do a scavenger hunt anyway?"
@@ -326,6 +353,17 @@ get '/scavenger/?' do
     end
     response.text
   end
+
+  send_pending_texts
+end
+
+def send_pending_texts
+  @pending_texts.each do |text|
+    test_params = text.merge({ from: ENV['RONIN_NUMBER'] })
+    @client.account.messages.create(test_params)
+  end
+
+  @pending_texts = []
 end
 
 def sendNextClue(user)
@@ -342,14 +380,18 @@ def sendNextClue(user)
   @player.update(:current => next_clue)
 end
 
-def sendPicture(to, msg)
-  message = @client.account.messages.create(
-    :from => ENV['RONIN_NUMBER'],
-    :to => @phone_number,
-    :body => msg,
-    # :media_url => media,
-  )
-  puts message.to
+def sendPicture(to, message)
+  @pending_texts.push({
+    to:  @phone_number,
+    body: message
+  })
+  # message = @client.account.messages.create(
+  #   :from => ENV['RONIN_NUMBER'],
+  #   :to => @phone_number,
+  #   :body => msg,
+  #   # :media_url => media,
+  # )
+  # puts message.to
 end
 
 def createUser(phone_number)
