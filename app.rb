@@ -356,6 +356,8 @@ get '/scavenger/?' do
     @send_this = response.text
   end
 
+  sleep 1
+
   send_pending_texts
   @send_this
 end
