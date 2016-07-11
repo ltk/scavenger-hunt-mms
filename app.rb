@@ -345,21 +345,31 @@ get '/scavenger/?' do
     )
   end
 
-  @send_this = nil
+  # @send_this = nil
+  #
+  # if params['SmsSid'] == nil
+  #   return @send_this
+  # else
+  #   response = Twilio::TwiML::Response.new do |r|
+  #     r.Sms output
+  #   end
+  #   @send_this = response.text
+  # end
+  #
+  # sleep 1
 
-  if params['SmsSid'] == nil
-    return @send_this
-  else
-    response = Twilio::TwiML::Response.new do |r|
-      r.Sms output
-    end
-    @send_this = response.text
-  end
+  # @send_this
 
-  sleep 1
+
+  @client.account.messages.create({
+    to:  @phone_number,
+    from: ENV['RONIN_NUMBER']
+    body: output
+  })
 
   send_pending_texts
-  @send_this
+
+  200
 end
 
 def send_pending_texts
