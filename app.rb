@@ -83,7 +83,7 @@ Jenny can't get in.
     )
   },
   "clue6" => {
-    "keyword" => /meep/,
+    "keyword" => /meep!?/,
     "title" => %q(
 mommy! mommy! meep!
 we want to go out and play!
@@ -317,7 +317,7 @@ in the toe sock’s home
     )
   },
   "clue36" => {
-    "keyword" => /yes/,
+    "keyword" => /yes!*/,
     "title" => %q(
 candle-gripping star
 spares are deposited here.
