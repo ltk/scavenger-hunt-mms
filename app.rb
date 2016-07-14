@@ -154,7 +154,7 @@ a much bigger thing
     )
   },
   "clue3" => {
-    "keyword" => 'mermaid',
+    "keyword" =>/mermaid/,
     "title" => %q(
 seeing will make you
 think twice about surf and turf
@@ -162,7 +162,7 @@ Lawson wouldn't know
     )
   },
   "clue4" => {
-    "keyword" => 'vault',
+    "keyword" => /vault/,
     "title" => %q(
 The first words of this
 poem don't really matter.
@@ -170,7 +170,7 @@ Jenny can't get in.
     )
   },
   "clue5" => {
-    "keyword" => 'meep',
+    "keyword" => /meep/,
     "title" => %q(
 mommy! mommy! meep!
 we want to go out and play!
@@ -178,7 +178,7 @@ meep! meep! meep! mommy!
     )
   },
   "clue6" => {
-    "keyword" => 'bca',
+    "keyword" => /bca/,
     "title" => %q(
 omg find them
 but first you need to find me
@@ -186,7 +186,7 @@ then move in a spiral
     )
   },
   "clue7" => {
-    "keyword" => 'yes',
+    "keyword" => /yes/,
     "title" => %q(
 Candle-gripping star
 spares are deposited here.
@@ -194,7 +194,7 @@ well, what do you say?
     )
   },
   "clue8" => {
-    "keyword" => 'giant',
+    "keyword" => /giant/,
     "title" => %q(
 expensive new toy
 picturesque sunset vistas
@@ -202,7 +202,7 @@ downhill is scary
     )
   },
   "clue9" => {
-    "keyword" => 'vasque',
+    "keyword" => /vasque/,
     "title" => %q(
 my dirt is a sign
 of the beatings I've taken
@@ -210,7 +210,7 @@ to bring you nature
     )
   },
   "clue10" => {
-    "keyword" => 'goose',
+    "keyword" => /goose/,
     "title" => %q(
 you may find a star
 in the scene of an actual,
@@ -218,20 +218,20 @@ real life wild goose chase
     )
   },
   "clue11" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
   },
   "clue12" => {
-    "keyword" => 'TKTKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
   },
   # 1 Sledding in Tantra Park
   "clue13" => {
-    "keyword" => 'TKTKTKTK',
+    "keyword" => /.*/,
     "title" => %q(
 Plastic in garage
 Put to its intended use
@@ -240,7 +240,7 @@ Watch out for that hay!
   },
   # 2 South Boulder Animal hospital
   "clue14" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 sick pumpkin muffin
 was feeling a lot better
@@ -249,7 +249,7 @@ after a visit
   },
   # 3 RTD Park and Ride
   "clue15" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 despite what it says
 tou don't have to park to ride
@@ -258,7 +258,7 @@ to airport or work
   },
   # 4 Old Viget Office
   "clue16" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 back alley dealings
 aka another day
@@ -267,7 +267,7 @@ at old Viget west
   },
   # 5 Dushanbe Teahouse
   "clue17" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 It sucks that all we
 gave in return was a lame
@@ -276,7 +276,7 @@ internet cafe
   },
   # 6 Boulder Tubing Park
   "clue18" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 started our float here
 if you can call it a float
@@ -286,7 +286,7 @@ more like survival
   # 7 Settlers Park (Red Rocks)
   # Rock climbing in work attire.
   "clue19" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
@@ -294,7 +294,7 @@ more like survival
   # 8 Lolita's Market
   # 24 hour market, snozwitches
   "clue20" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
@@ -303,14 +303,14 @@ more like survival
   # puts the "fun" in fundido
   # mojitos
   "clue21" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
   },
   # 10 Amu
   "clue22" => {
-    "keyword" => 'TKTKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 ahem, no shoes here
 find a different place to wear
@@ -319,7 +319,7 @@ shoes on your birthdays
   },
   # 11 Luciles
   "clue23" => {
-    "keyword" => 'TKTKTKTK',
+    "keyword" => /.*/,
     "title" => %q(
 Goodness gracious me.
 I can't fit another bite.
@@ -328,7 +328,7 @@ Too much carbs to start.
   },
   # 12 Mountain Sun (Lunch + Beer)
   "clue24" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 Proceed to water hole
 after one or two FYs
@@ -337,7 +337,7 @@ a star may appear
   },
   # 13 Laughing Goat
   "clue25" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 hip cafe named for
 an epic badass of the
@@ -346,7 +346,7 @@ mountain wilderness
   },
   # 14 Whole Foods
   "clue26" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 where in the hell is
 the tandoori masala
@@ -355,7 +355,7 @@ check every bottle
   },
   # 15 Solana
   "clue27" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 Is there a word for
 the opposite of fung shui?
@@ -364,7 +364,7 @@ That's what they went for.
   },
   # 16 Crossfit Sanitas
   "clue28" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 do you ever get
 to push those huge tires around?
@@ -376,21 +376,21 @@ think outside the box
   # radi
   # PT starts wednesday.
   "clue29" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
   },
   # 18 CU Law
   "clue30" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
   },
   # 19 Ras Kassas
   "clue31" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 elastic or food?
 rang the bell, rang it again
@@ -399,7 +399,7 @@ anybody home?
   },
   # 20 Creekside Elementary
   "clue32" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 4803
 if we bought it, J-K kids
@@ -408,21 +408,21 @@ would go to learn here
   },
   # 21 Neptune
   "clue33" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
   },
   # 22 Under the Sun
   "clue34" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
   },
   # Next clue back at home
   "clue35" => {
-    "keyword" => 'TKTKTKT',
+    "keyword" => /.*/,
     "title" => %q(
 
     )
