@@ -138,7 +138,7 @@ set :static, true
 
 $CLUES = {
   "clue1" => {
-    "keyword" => 'ball',
+    "keyword" => /ball|tree/,
     "title" => %q(
 you don't need to go
 to dushanbe to find the
@@ -146,7 +146,7 @@ my favorite green
     )
   },
   "clue2" => {
-    "keyword" => 'duracell',
+    "keyword" => /ball|tree/,
     "title" => %q(
 we power the thing
 you use to give power to
@@ -512,7 +512,7 @@ get '/scavenger/?' do
       remaining = (@player.remaining).split(',')
       puts "remaining #{remaining}"
 
-      if @body == clue['keyword']
+      if @body =~ clue['keyword']
 
         # Score this point
         # complete = @player.complete++
