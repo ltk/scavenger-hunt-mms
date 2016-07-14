@@ -41,135 +41,48 @@ end
 
 set :static, true
 
-# CLUES
-
-# IN
-# remote battery compartment
-# disney vhs
-# bear canister
-# bike
-
-
-# green goji
-# you don't need to go
-# to dushanbe to find the
-# my favorite green
-
-
-# ring recepticle
-
-# OUT
-
-
-# Lunch rez at Oak
-# find a gold star
-# enter some word in the scene
-# free-for-all answer (server's name, price of a cookie + tax (before tip))
-
-# kaia goose chase (you may find a start in the scene of the most recent wild goose chase)
-# bike (bring your lock!)
-# south boulder animal hospital (name of a front desk person) [louise|shellee|janice]
-# under the sun (cost of a cookie)
-# king soopers (the basil olive oil code)
-# house where I left my sunglasses
-# ncar (TKTKTK something from trailhead sign... maybe how many stations there are in the nature walk thing?)
-# magic mesa
-# teahouse (how many kinds of tea do they have)
-# T-aco ()
-# rio grande (You got the bad kind. )
-# amu
-# luciles (all digits on their front door) [7282]
-# mountain sun (drink and FY, then text me your server's name)
-# The laughing goat ()
-# whole foods (mochi fridge)
-# solana
-# sanitas brewery
-# motomaki
-# jimmy johns (how many tables are there?)
-# ethiopian place
-
-
-# Non-Shared Places
-# Oak
-# Arabesque
-# champions center
-# old office?
-
-
-
-# Flagstaff (enter the number of pedal strokes it takes you to get here... jk)
-
-
-
-# Home
-
-# 1 Sledding in Tantra Park
-# 2 South Boulder Animal hospital
-# 3 RTD Park and Ride
-# __ transfer  __
-# 4 Old Viget Office
-# 5 Dushanbe Teahouse
-# 6 Boulder Tubing Park
-# 7 Settlers Park (Red Rocks)
-# 8 Lolita's Market
-# 9 Centro
-# 10 Amu
-# 11 Luciles
-# 12 Mountain Sun (Lunch + Beer)
-# 13 Laughing Goat
-# 14 Whole Foods
-# 15 Solana
-# 16 Crossfit Sanitas
-# 17 Champions Center
-# 18 CU Law
-# 19 Ras Kassas
-# 20 Creekside Elementary
-# 21 Neptune
-# 22 Under the Sun
-
-# Home
-
-
-# Spruce pool?
-# mr horse
-# birdies
-
-
-
 $CLUES = {
   "clue1" => {
-    "keyword" => /ball|tree/,
-    "title" => %q(
-you don't need to go
-to dushanbe to find the
-my favorite green
-    )
-  },
-  "clue2" => {
-    "keyword" => /ball|tree/,
-    "title" => %q(
-we power the thing
-you use to give power to
-a much bigger thing
-    )
-  },
-  "clue3" => {
-    "keyword" =>/mermaid/,
+    "keyword" => /disney|disneys|disney's/,
     "title" => %q(
 seeing will make you
 think twice about surf and turf
 Lawson wouldn't know
     )
   },
-  "clue4" => {
-    "keyword" => /vault/,
+  "clue2" => {
+    "keyword" => /ball/,
     "title" => %q(
-The first words of this
+you don't need to go
+to dushanbe to find the
+my favorite green
+    )
+  },
+  "clue3" => {
+    "keyword" =>/tracker2/,
+    "title" => %q(
+omg find them!
+but first you need to find me
+then move in a spiral
+    )
+  },
+  "clue4" => {
+    "keyword" => /sony/,
+    "title" => %q(
+we power the thing
+you use to give power to
+a much bigger thing
+    )
+  },
+  "clue5" => {
+    "keyword" => /other/,
+    "title" => %q(
+the first words of this
 poem don't really matter.
 Jenny can't get in.
     )
   },
-  "clue5" => {
+  "clue6" => {
     "keyword" => /meep/,
     "title" => %q(
 mommy! mommy! meep!
@@ -177,31 +90,7 @@ we want to go out and play!
 meep! meep! meep! mommy!
     )
   },
-  "clue6" => {
-    "keyword" => /bca/,
-    "title" => %q(
-omg find them
-but first you need to find me
-then move in a spiral
-    )
-  },
   "clue7" => {
-    "keyword" => /yes/,
-    "title" => %q(
-Candle-gripping star
-spares are deposited here.
-well, what do you say?
-    )
-  },
-  "clue8" => {
-    "keyword" => /giant/,
-    "title" => %q(
-expensive new toy
-picturesque sunset vistas
-downhill is scary
-    )
-  },
-  "clue9" => {
     "keyword" => /vasque/,
     "title" => %q(
 my dirt is a sign
@@ -209,161 +98,143 @@ of the beatings I've taken
 to bring you nature
     )
   },
-  "clue10" => {
-    "keyword" => /goose/,
+  "clue8" => {
+    "keyword" => /pull/,
     "title" => %q(
 you may find a star
 in the scene of an actual,
 real life wild goose chase
     )
   },
+  "clue9" => {
+    "keyword" => /giant/,
+    "title" => %q(
+expensive new toy
+picturesque sunset vistas
+downhill is scary
+    )
+  },
+  "clue10" => {
+    "keyword" => /.*/,
+    "title" => %q(
+plastic in garage
+put to its intended use
+watch out for that hay!
+    )
+  },
   "clue11" => {
-    "keyword" => /.*/,
-    "title" => %q(
-
-    )
-  },
-  "clue12" => {
-    "keyword" => /.*/,
-    "title" => %q(
-
-    )
-  },
-  # 1 Sledding in Tantra Park
-  "clue13" => {
-    "keyword" => /.*/,
-    "title" => %q(
-Plastic in garage
-Put to its intended use
-Watch out for that hay!
-    )
-  },
-  # 2 South Boulder Animal hospital
-  "clue14" => {
-    "keyword" => /.*/,
+    "keyword" => /entrance|bite/,
     "title" => %q(
 sick pumpkin muffin
 was feeling a lot better
 after a visit
     )
   },
-  # 3 RTD Park and Ride
-  "clue15" => {
-    "keyword" => /.*/,
+  "clue12" => {
+    "keyword" => /kiss/,
     "title" => %q(
 despite what it says
-tou don't have to park to ride
+you don't have to park to ride
 to airport or work
     )
   },
-  # 4 Old Viget Office
-  "clue16" => {
-    "keyword" => /.*/,
+  "clue13" => {
+    "keyword" => /fire/,
     "title" => %q(
 back alley dealings
 aka another day
 at old Viget west
     )
   },
-  # 5 Dushanbe Teahouse
-  "clue17" => {
-    "keyword" => /.*/,
+  "clue14" => {
+    "keyword" => /market/,
     "title" => %q(
-It sucks that all we
-gave in return was a lame
-internet cafe
+veggies, pasta, cheese
+come find it all at this place
+which isn’t open
     )
   },
-  # 6 Boulder Tubing Park
-  "clue18" => {
-    "keyword" => /.*/,
+  "clue15" => {
+    "keyword" => /area/,
     "title" => %q(
 started our float here
 if you can call it a float
 more like survival
     )
   },
-  # 7 Settlers Park (Red Rocks)
-  # Rock climbing in work attire.
+  "clue16" => {
+    "keyword" => /gold/,
+    "title" => %q(
+red rock rock climbing
+in work attire of course
+go take a picture
+    )
+  },
+  "clue17" => {
+    "keyword" => /juice/,
+    "title" => %q(
+man it’s hot outside
+grab a beverage from this shop
+open all the time
+    )
+  },
+  "clue18" => {
+    "keyword" => /towed/,
+    "title" => %q(
+surrounded by fear
+the only place nearby where
+zoe feels at home
+    )
+  },
   "clue19" => {
-    "keyword" => /.*/,
-    "title" => %q(
-
-    )
-  },
-  # 8 Lolita's Market
-  # 24 hour market, snozwitches
-  "clue20" => {
-    "keyword" => /.*/,
-    "title" => %q(
-
-    )
-  },
-  # 9 Centro
-  # puts the "fun" in fundido
-  # mojitos
-  "clue21" => {
-    "keyword" => /.*/,
-    "title" => %q(
-
-    )
-  },
-  # 10 Amu
-  "clue22" => {
-    "keyword" => /.*/,
+    "keyword" => /glass/,
     "title" => %q(
 ahem, no shoes here
 find a different place to wear
 shoes on your birthdays
     )
   },
-  # 11 Luciles
-  "clue23" => {
-    "keyword" => /.*/,
+  "clue20" => {
+    "keyword" => /camera/,
     "title" => %q(
-Goodness gracious me.
+goodness gracious me.
 I can't fit another bite.
-Too much carbs to start.
+too much carbs to start.
     )
   },
-  # 12 Mountain Sun (Lunch + Beer)
-  "clue24" => {
+  "clue21" => {
     "keyword" => /.*/,
     "title" => %q(
-Proceed to water hole
+pause the video
 after one or two FYs
 a star may appear
     )
   },
-  # 13 Laughing Goat
-  "clue25" => {
-    "keyword" => /.*/,
+  "clue22" => {
+    "keyword" => /8|eight/,
     "title" => %q(
-hip cafe named for
-an epic badass of the
-mountain wilderness
+want to make a splash?
+I hear there’s a spot nearby
+text number of lanes
     )
   },
-  # 14 Whole Foods
-  "clue26" => {
-    "keyword" => /.*/,
+  "clue23" => {
+    "keyword" => /cove|365/,
     "title" => %q(
-where in the hell is
-the tandoori masala
-check every bottle
+you fetched it before
+obscure item for sushi
+go fetch it again
     )
   },
-  # 15 Solana
-  "clue27" => {
-    "keyword" => /.*/,
+  "clue24" => {
+    "keyword" => /pay/,
     "title" => %q(
 Is there a word for
 the opposite of fung shui?
 That's what they went for.
     )
   },
-  # 16 Crossfit Sanitas
-  "clue28" => {
+  "clue25" => {
     "keyword" => /.*/,
     "title" => %q(
 do you ever get
@@ -371,25 +242,19 @@ to push those huge tires around?
 think outside the box
     )
   },
-  # 17 Champions Center
-  # hit me with that sweet
-  # radi
-  # PT starts wednesday.
-  "clue29" => {
+  "clue26" => {
     "keyword" => /.*/,
     "title" => %q(
-
+Champions Center
     )
   },
-  # 18 CU Law
-  "clue30" => {
+  "clue27" => {
     "keyword" => /.*/,
     "title" => %q(
-
+CU Law
     )
   },
-  # 19 Ras Kassas
-  "clue31" => {
+  "clue28" => {
     "keyword" => /.*/,
     "title" => %q(
 elastic or food?
@@ -397,36 +262,68 @@ rang the bell, rang it again
 anybody home?
     )
   },
-  # 20 Creekside Elementary
-  "clue32" => {
-    "keyword" => /.*/,
+  "clue29" => {
+    "keyword" => /success/,
     "title" => %q(
 4803
 if we bought it, J-K kids
 would go to learn here
     )
   },
-  # 21 Neptune
-  "clue33" => {
-    "keyword" => /.*/,
+  "clue30" => {
+    "keyword" => /denali/,
     "title" => %q(
-
+next to Uranus,
+find a route to the top of
+Lawson’s bucket list
     )
   },
-  # 22 Under the Sun
+  "clue31" => {
+    "keyword" => /trash/,
+    "title" => %q(
+cash-only cookies
+that aint gonna work for us
+without a stop here
+    )
+  },
+  "clue32" => {
+    "keyword" => /protein/,
+    "title" => %q(
+chemically speaking,
+I keep your kittens alive.
+or should I say cats?
+    )
+  },
+  "clue33" => {
+    "keyword" => /austin/,
+    "title" => %q(
+my name is not ed.
+I watch you during dinner.
+come flip me over.
+    )
+  },
   "clue34" => {
     "keyword" => /.*/,
     "title" => %q(
-
+Some place in Purk
     )
   },
-  # Next clue back at home
   "clue35" => {
-    "keyword" => /.*/,
+    "keyword" => /forever/,
     "title" => %q(
-
+today you might find
+something other than toe socks
+in the toe sock’s home
     )
   },
+  "clue36" => {
+    "keyword" => /yes/,
+    "title" => %q(
+candle-gripping star
+spares are deposited here.
+well, what do you say?
+    )
+  }
 }
 
 get '/scavenger/?' do
@@ -524,7 +421,7 @@ get '/scavenger/?' do
         @player.update(:remaining => remaining.join(','))
 
         if remaining.length == 0
-          output = "Congratulations #{@player.name}! You've finished the hunt and found #{@player.complete} clues! You finished in #{@minutes}! Ur cool."
+          output = "🙂🙂😙😜😃🎈🎉🎂 Yay!! Ur cool."
         else
           success_messages = [
             "Nailed it.",
@@ -547,15 +444,19 @@ get '/scavenger/?' do
         end
 
       else
-        # Player missed one, increment
-        # puts @player.missed
-        # missed = @player.missed++
-        # @player.update(:missed => missed)
+        fail_messages = [
+          "Not quite. Try something else.",
+          "Sorry #{@player.name}. That's wrong.",
+          "Nope, keep trying.",
+          "Close but no cigar.",
+          "Shoot, not exactly.",
+          "Argh, that's not right.",
+          "Ugh, that's not it. Try again?",
+          "Keep trying! Not quite there yet though.",
+          ":-( Negative. Try again.",
+        ]
 
-        output = "That's not completely right (in fact it's wrong). Try again. Or I guess you could ask for a hint."
-
-        # Get next clue and send it.
-        # sendNextClue(@player)
+        output = fail_messages.sample
       end
     end
   rescue StandardError => e
