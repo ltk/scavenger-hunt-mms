@@ -235,27 +235,15 @@ That's what they went for.
     )
   },
   "clue25" => {
-    "keyword" => /.*/,
+    "keyword" => /crossfit/,
     "title" => %q(
 do you ever get
 to push those huge tires around?
 think outside the box
     )
   },
-  "clue26" => {
-    "keyword" => /.*/,
-    "title" => %q(
-Champions Center
-    )
-  },
-  "clue27" => {
-    "keyword" => /.*/,
-    "title" => %q(
-CU Law
-    )
-  },
   "clue28" => {
-    "keyword" => /.*/,
+    "keyword" => /bell/,
     "title" => %q(
 elastic or food?
 rang the bell, rang it again
@@ -267,7 +255,7 @@ anybody home?
     "title" => %q(
 4803
 if we bought it, J-K kids
-would go to learn here
+would go learn here first
     )
   },
   "clue30" => {
@@ -284,6 +272,14 @@ Lawson’s bucket list
 cash-only cookies
 that aint gonna work for us
 without a stop here
+    )
+  },
+  "clue31.5" => {
+    "keyword" => /.*/,
+    "title" => %q(
+woah, you're flush with cash!
+know a good place to spend it?
+text me the total
     )
   },
   "clue32" => {
@@ -303,9 +299,11 @@ come flip me over.
     )
   },
   "clue34" => {
-    "keyword" => /.*/,
+    "keyword" => /846[- ]?qzz/,
     "title" => %q(
-Some place in Purk
+mountainous weekends
+wouldn't happen without me
+
     )
   },
   "clue35" => {
@@ -361,7 +359,7 @@ get '/scavenger/?' do
         @player.update(:status => 'reconfirming')
       else
         puts "Sending #{@player.name} a clue."
-        output = "Cool! Well then it's time for your first clue! I'll send it in a sec. Find the thing, then text me the code word on or around it."
+        output = "Cool! Do you also like gold stars? Of course you do, so it's time for your first clue! I'll send it in a sec. Find the star, then text me the starred word!"
         @player.update(:status => 'hunting')
         sendNextClue(@player)
       end
